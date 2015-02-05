@@ -22,7 +22,7 @@
       //   });
 
         $(function(){
-          $.each(['functional-shared'], function(i, variant){
+          $.each(['prototypal'], function(i, variant){
             $('<iframe src="' + window.location.toString().replace('.html', 'Section.html?') + variant + '" />').appendTo(document.body);
           });
 
