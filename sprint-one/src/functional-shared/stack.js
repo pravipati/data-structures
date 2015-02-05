@@ -4,25 +4,25 @@ var Stack = function() {
   var stack = {};
   stack.length = 0;
   stack.storage = {};
-  debugger;
-  _.extend(stack, Stack.stackMethods);
+  //debugger;
+  _.extend(stack, stackMethods);
   return stack;
 };
 
-Stack.stackMethods = {};
+var stackMethods = {};
 
-Stack.stackMethods.push = function(value){
-  this.storage[length] = value;
+stackMethods.push = function(value){
+  this.storage[this.length] = value;
   this.length += 1;
 }
 
-Stack.stackMethods.pop = function(value){
+stackMethods.pop = function(){
   this.length -= 1;
-  var results = this.storage[length];
-  return results;
+  var result = this.storage[this.length];
+  return result;
 }
 
-Stack.stackMethods.size = function(){
+stackMethods.size = function(){
   if (this.length < 0){
     return 0;
   }
