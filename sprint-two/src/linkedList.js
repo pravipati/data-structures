@@ -2,7 +2,6 @@ var LinkedList = function(){
   var list = {};
   list.head = null;
   list.tail = null;
-  var key = 0;
 
   list.addToTail = function(value){
     // store new node in variable
@@ -12,34 +11,38 @@ var LinkedList = function(){
     //assign list.tail to Node
       list.tail = node;
       list.head = node;
-      list[key] = node;
-      key++;
     }
     //if list.tail already has a node, change list.tail's next value to node
     list.tail.next = node;
     list.tail = node;
-    list[key] = node;
-    key++;
   };
 
   list.removeHead = function(){
     if (list.head){
       var result = list.head;
       list.head = list.head.next;
-      console.log(result.key);
-      delete list[result.key]
       return result.value;
     }
 
   };
 
   list.contains = function(target){
-    for (var key in list) {
-      if (list[key].value === target){
+
+    var nodeSearch = function(node) {
+      // if node === null return false
+      if (node.next === null) {
+        return node.value === target;
+      }
+      // debugger;
+      if (node.value === target) {
         return true;
       }
-    }
-    return false;
+      return nodeSearch(node.next);
+      //
+      //
+    };
+
+    return nodeSearch(list.head);
   };
 
   return list;
@@ -49,8 +52,6 @@ var LinkedList = function(){
 
 var Node = function(value){
   var node = {};
-  var key = this.key
-  node.key = key;
   node.value = value;
   node.next = null;
 
