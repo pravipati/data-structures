@@ -9,7 +9,7 @@ var Graph = function(){
   return obj;
 };
 
-var Node = function(node) {
+var GraphNode = function(node) {
   var obj = {};
   obj[node] = node;
   return obj;
@@ -17,7 +17,7 @@ var Node = function(node) {
 
 
 Graph.prototype.addNode = function(node){
-  var newNode = Node(node);
+  var newNode = GraphNode(node);
   this.storage.push(newNode);
 };
 
