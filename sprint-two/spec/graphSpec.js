@@ -21,7 +21,6 @@ describe('graph', function() {
   });
 
   it('should remove nodes that were inserted', function() {
-    //debugger;
     graph.addNode('puppies');
     expect(graph.contains('puppies')).to.equal(true);
     graph.removeNode('puppies');
@@ -38,7 +37,6 @@ describe('graph', function() {
   });
 
   it('should remove edges between nodes', function() {
-    //debugger;
     graph.addNode('apples');
     graph.addNode('satsumas');
     graph.addEdge('satsumas', 'apples');
@@ -46,7 +44,6 @@ describe('graph', function() {
   });
 
   it('should execute a callback on each node in the graph', function() {
-    debugger;
     var connectToSatsumas = function(item) {
       graph.addEdge(item, 'satsumas');
     };
