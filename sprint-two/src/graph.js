@@ -39,8 +39,8 @@ Graph.prototype.removeNode = function(node){
 };
 
 Graph.prototype.hasEdge = function(fromNode, toNode){
-  console.log(this.connections[fromNode].length);
-  console.log(this.connections[toNode].length);
+  //console.log(this.connections[fromNode].length);
+  //console.log(this.connections[toNode].length);
   for (var i = 0; i < this.connections[fromNode].length; i++) {
     if (this.connections[fromNode][i] === toNode) {
       return true;
